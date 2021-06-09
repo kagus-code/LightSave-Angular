@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import {Emitters} from '../emitters/emitters';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -21,10 +22,14 @@ message =""
     {withCredentials:true})
     .subscribe(response =>{
       console.log(response);
-      this.user = response
+      this.user = response;
+      Emitters.authEmitter.emit(true);
     },
-    error => this.message ="no user found"
-    
+    error => { 
+      this.message ="no user found";
+      Emitters.authEmitter.emit(false);
+
+  }
     );
 
     
