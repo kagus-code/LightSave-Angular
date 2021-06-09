@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
+   
+
+form input {
+  color: white;
+}
+      .bg-custom{
+      background: #6e12b9;
+      }
+      .bg-custom-form{
+      background: #333333;
+      }
+      h1{
+      top: 25%;
+      text-align: center;
+      position: relative;
+      font-size: 100px;
+      text-transform: uppercase;
+      line-height: 140px;
+      letter-spacing: 4px;
+      }
+      h1,p,label{
+      color: #fff;
+      }
+      label{
+      margin: 5px 0px;
+      }
+      .form-control{
+      outline: none;
+      border: none;
+      background: none;
+      border-bottom: 1px solid #fff;
+      border-radius: 0px !important;
+      }
+      .form-control:focus,.form-control:hover{
+      border:none;
+      margin: 0 auto;
+      background: none;
+      box-shadow: none;
+      border-bottom: 1px solid #4ed4b4;
+      }
+      .btn{
+      border-radius: 0px;
+      }
+      .btn-custom,.btn-custom:focus{
+        background: #6e12b9;
+        background: #6e12b9;
+      color: #fff;
+      box-shadow: none;
+      }
+      .btn-custom:hover{
+      background: #3aa696;
+      color: #fff;
+      }
+      .image{
+        width: 100%;
+      }
+      @media(max-width:768px){
+      .none{
+      display: none;
+      }
+      }
