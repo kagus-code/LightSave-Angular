@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Emitters} from '../emitters/emitters';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -8,7 +10,11 @@ import {Emitters} from '../emitters/emitters';
 })
 export class NavigationComponent implements OnInit {
    authenticated = false;
-  constructor() { }
+  constructor(
+
+    private http: HttpClient,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 Emitters.authEmitter.subscribe(
@@ -17,5 +23,17 @@ Emitters.authEmitter.subscribe(
   }
 );
   }
+
+logout ():void{
+
+  this.http.post('http://127.0.0.1:8000/logout/',{},{withCredentials:true}).subscribe(response =>{
+    console.log(response)
+    confirm("Do you really want to Logout");
+    this.authenticated = false;
+    this.router.navigateByUrl('/login');
+
+  })
+
+}
 
 }
