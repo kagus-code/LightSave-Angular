@@ -9,7 +9,7 @@ import {Emitters} from '../emitters/emitters';
 })
 export class LandingComponent implements OnInit {
 user:any = []
-message =""
+message =" "
 
   constructor(
     private http: HttpClient,
@@ -25,7 +25,8 @@ message =""
       this.user = response;
       Emitters.authEmitter.emit(true);
     },
-    error => { 
+     error => { 
+      console.log('error', error)
       this.message ="no user found";
       Emitters.authEmitter.emit(false);
 
