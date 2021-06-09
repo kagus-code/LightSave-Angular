@@ -8,6 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import {SharedService} from './shared.service'
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
