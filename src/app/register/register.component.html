@@ -6,22 +6,18 @@
     </div>
     <div class="col-md-6 col-sm-12 bg-custom-form">
       <p class="text-center mb-0 pt-4">Register</p>
-      <form action="#" class="p-3">
-        <div class="form-group" >
-          <label for="pwd">FIRST NAME</label>
-          <input  type="fname" class="form-control" id="pwd">
-        </div>
+      <form [formGroup]="form"  (submit)="submit()" class="p-3">
         <div class="form-group">
           <label for="email">EMAIL</label>
-          <input type="email" class="form-control">
+          <input formControlName="email" type="email" class="form-control">
         </div>
         <div class="form-group">
           <label for="pwd">USERNAME</label>
-          <input type="name" class="form-control" id="pwd">
+          <input formControlName="username" type="name" class="form-control" >
         </div>
         <div class="form-group">
           <label for="pwd">PASSWORD</label>
-          <input type="password" class="form-control" id="pwd">
+          <input formControlName="password" type="password" class="form-control" >
         </div>
         <button type="submit" class="btn btn-custom mb-3 mt-3">Sign Up</button>
         <p><small>Already have an account with us?  &nbsp;<a routerLink="/login" style=" color: white;">Log in</a></small></p>
