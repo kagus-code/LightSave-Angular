@@ -9,7 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {SharedService} from './shared.service';
-import { ApplianceComponent } from './landing/appliance/appliance.component'
+import { ApplianceComponent } from './landing/appliance/appliance.component';
+import { CostComponent } from './landing/cost/cost.component'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ApplianceComponent } from './landing/appliance/appliance.component'
     RegisterComponent,
     LoginComponent,
     NavigationComponent,
-    ApplianceComponent
+    ApplianceComponent,
+    CostComponent
   ],
   imports: [
     BrowserModule,
