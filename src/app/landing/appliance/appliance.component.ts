@@ -50,7 +50,7 @@ energyCalc(event:any){
 // this.hoursDay = event.target.dayHrs.value
 let power=parseInt(this.wattageVal.AppList);
 let hrs = parseInt(event.target.dayHrs.value);
-if (power== null || hrs == null) return;
+if (power== NaN || hrs == NaN) return;
 power/=1000;
 let kwhDay = power * hrs;
 let kwhMonth = kwhDay * 30;
@@ -63,13 +63,13 @@ this.kwhDay=kwhDay;
 this.kwhMonth = kwhMonth;
 this.kwhYear =kwhYear;
 console.log(kwhDay+"--"+kwhMonth+"--"+kwhYear);
-event.target.dayHrs.value = " "
 this.applianceForm.reset();
+event.target.dayHrs.value = " "
+event.target.powerWatt.value = " "
 
 
 
 
 }
-
 
 }
