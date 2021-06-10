@@ -59,7 +59,10 @@ if ( event.target.dayHrs.value <= 0 || event.target.powerWatt.value <= 0) {
   
   return;}
 
-
+  if ( event.target.dayHrs.value > 24) {
+    alert("woops!! A day only has 24hrs")
+    
+    return;}
 power/=1000;
 let kwhDay = power * hrs;
 let kwhMonth = kwhDay * 30;

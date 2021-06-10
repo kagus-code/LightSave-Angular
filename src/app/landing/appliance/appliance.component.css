@@ -1,0 +1,26 @@
+#result{
+font-size:50px;
+margin: 0;
+background: url(/assets/text1.jpg)repeat 0px 0px;
+background-size: contain;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+     
+color: transparent;
+}
+
+
+@media(max-width:768px){
+  #result{
+    font-size:20px;
+  }
+  }
+
+  @media(max-width:516px){
+    #result{
+      font-size:18px;
+    }
+    }
+
+  
