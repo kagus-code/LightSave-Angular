@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -10,8 +10,13 @@ import { AppList } from 'src/app/app-list';
   templateUrl: './appliance.component.html',
   styleUrls: ['./appliance.component.css']
 })
+
+
 export class ApplianceComponent implements OnInit {
 
+  @Input()
+  required: boolean | string
+  
   constructor(
 
     private service: SharedService,
@@ -29,8 +34,7 @@ export class ApplianceComponent implements OnInit {
   ngOnInit(): void {
     this.refreshAppList();
     this.applianceForm = this.formbuilder.group({
-      AppList: [null ]
-	
+      AppList: [null ],
 });	
     
   }
@@ -50,7 +54,12 @@ energyCalc(event:any){
 // this.hoursDay = event.target.dayHrs.value
 let power=parseInt(this.wattageVal.AppList);
 let hrs = parseInt(event.target.dayHrs.value);
-if (power== NaN || hrs == NaN) return;
+if ( event.target.dayHrs.value <= 0 || event.target.powerWatt.value <= 0) {
+  alert("enter valid value")
+  
+  return;}
+
+
 power/=1000;
 let kwhDay = power * hrs;
 let kwhMonth = kwhDay * 30;

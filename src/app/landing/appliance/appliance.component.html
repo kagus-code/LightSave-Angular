@@ -11,65 +11,36 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h2 style="color: black" class="modal-title" id="exampleModalLabel">Choose Appliance and enter Hours of use</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       
 
-
-
-
-
-        <form [formGroup]="applianceForm" (submit)="energyCalc($event)" >
-          <table class="calc2">
-          <tr>
-          <td>Typical appliance:</td>
-          <td colspan="2">
-          <select (change)="wattVal()" formControlName="AppList"  autofocus>
-          <option [ngValue]="null" disabled>Choose Appliance</option>
-          <option *ngFor="let data of ApplianceList" [ngValue]="data.wattage">{{data.name}}</option>
+        <form [formGroup]="applianceForm" (submit)="energyCalc($event)"  >
           
-          </select>
-          
-        </td>
-          </tr>
-        
-          <tr>
-            <td >Power consumption:</td>
-            <td class="math"><input name="powerWatt" type="number" value="{{wattageVal.AppList}}" required> </td>
-            <td><select name="Select2"><option selected="selected">watts (W)</option></select></td>
-            
-            </tr>
-        
-            <tr>
-              <td>Hours of use per day:</td>
-              <td class="math"><input  name="dayHrs"  type="number" step="any" min="0" max="24" class="intext" required></td>
-              <td class="mathsymbol">h/day</td>
-              </tr>
-            
-        </table>
-        <button type="submit" class="btn btn-success"> Calculate</button>
-        
+          <div class="form-group">
+            <label>Common Appliances</label>
+            <select class="form-control" (change)="wattVal()" formControlName="AppList"  autofocus>
+              <option [ngValue]="null" disabled>Choose Appliance</option>
+              <option *ngFor="let data of ApplianceList" [ngValue]="data.wattage">{{data.name}}</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Power Consumed</label>
+            <input class="form-control" name="powerWatt" type="number" value="{{wattageVal.AppList}}"    placeholder="Power Consumed" >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Hours of use per day:</label>
+            <input  name="dayHrs"  type="number" step="any" min="0" max="24" class="intext form-control" placeholder="Hours of use per day" >
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success"> Calculate</button>
+          </div>
         </form>
-        
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      </div>  
     </div>
   </div>
 </div>
