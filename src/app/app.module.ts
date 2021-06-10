@@ -8,7 +8,8 @@ import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import {SharedService} from './shared.service'
+import {SharedService} from './shared.service';
+import { ApplianceComponent } from './landing/appliance/appliance.component'
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {SharedService} from './shared.service'
     LandingComponent,
     RegisterComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    ApplianceComponent
   ],
   imports: [
     BrowserModule,

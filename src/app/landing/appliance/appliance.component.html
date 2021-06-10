@@ -1,0 +1,72 @@
+
+
+
+<form [formGroup]="applianceForm" (submit)="energyCalc()" >
+  <table class="calc2">
+  <tr>
+  <td>Typical appliance:</td>
+  <td colspan="2">
+  <select (change)="wattVal()" formControlName="AppList"  autofocus>
+  <option [ngValue]="null" disabled>Choose Appliance</option>
+  <option *ngFor="let data of ApplianceList" [ngValue]="data.wattage">{{data.name}}</option>
+  
+  </select>
+  
+</td>
+  </tr>
+
+  <tr>
+    <td >Power consumption:</td>
+    <td class="math"><input type="number" value="{{wattageVal.AppList}}" > </td>
+    <td><select name="Select2"><option selected="selected">watts (W)</option></select></td>
+    
+    </tr>
+
+    <tr>
+      <td>Hours of use per day:</td>
+      <td class="math"><input name="Text2" type="number" step="any" min="0" max="24" class="intext"></td>
+      <td class="mathsymbol">h/day</td>
+      </tr>
+    
+</table>
+<button type="submit" class="btn btn-success"> Calculate</button>
+</form>
+
+
+<!--   
+  <tr>
+  <td>Power consumption:</td>
+  <td class="math"><input name="Text1" type="number" step="any" min="0" class="intext"></td>
+  <td><select name="Select2">
+  <option selected="selected">watts (W)</option>
+  <option>kilowatts (kW)</option>
+  </select></td>
+  </tr>
+  <tr>
+  <td>Hours of use per day:</td>
+  <td class="math"><input name="Text2" type="number" step="any" min="0" max="24" class="intext"></td>
+  <td class="mathsymbol">h/day</td>
+  </tr>
+  <tr>
+  <td>&nbsp;</td>
+  <td colspan="2"><input onclick="OnEnergyCalc()" type="button" value="Calculate" class="btn"> <input type="reset" value="Reset" class="btn"></td>
+  </tr>
+  <tr>
+  <td>Energy consumed per day:</td>
+  <td class="math"><input name="Text8" type="text" class="outtext" readonly></td>
+  <td class="mathsymbol">kWh/day</td>
+  </tr>
+  <tr>
+  <td>Energy consumed per month:</td>
+  <td class="math"><input name="Text9" type="text" class="outtext" readonly></td>
+  <td class="mathsymbol">kWh/month</td>
+  </tr>
+  <tr>
+  <td>Energy consumed per year:</td>
+  <td class="math"><input name="Text10" type="text" class="outtext" readonly></td>
+  <td class="mathsymbol">kWh/year</td>
+  </tr>
+  </table>
+  </form>
+
+   -->
