@@ -22,6 +22,7 @@ export class ApplianceComponent implements OnInit {
   ApplianceList:any=[];
   wattageVal:any = " ";
   applianceForm: FormGroup;
+  hoursDay:number;
 
   ngOnInit(): void {
     this.refreshAppList();
@@ -43,7 +44,24 @@ wattVal(): void{
   console.log(this.wattageVal)
 
 }
+energyCalc(event:any){
+// this.hoursDay = event.target.dayHrs.value
+let power=parseInt(this.wattageVal.AppList);
+let hrs = parseInt(event.target.dayHrs.value);
+if (power== null || hrs == null) return;
+power/=1000;
+let kwhDay = power * hrs;
+let kwhMonth = kwhDay * 30;
+let kwhYear = kwhDay * 365;
+kwhDay   = parseFloat(kwhDay.toFixed(5));
 
+kwhMonth = parseFloat(kwhMonth.toFixed(5));
+kwhYear  = parseFloat(kwhYear.toFixed(5));
+console.log(kwhDay+"--"+kwhMonth+"--"+kwhYear)
+this.applianceForm.reset()
+
+
+}
 
 
 }

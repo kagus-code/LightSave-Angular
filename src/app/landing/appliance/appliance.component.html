@@ -1,7 +1,7 @@
 
 
 
-<form [formGroup]="applianceForm" (submit)="energyCalc()" >
+<form [formGroup]="applianceForm" (submit)="energyCalc($event)" >
   <table class="calc2">
   <tr>
   <td>Typical appliance:</td>
@@ -24,12 +24,13 @@
 
     <tr>
       <td>Hours of use per day:</td>
-      <td class="math"><input name="Text2" type="number" step="any" min="0" max="24" class="intext"></td>
+      <td class="math"><input  name="dayHrs"  type="number" step="any" min="0" max="24" class="intext"></td>
       <td class="mathsymbol">h/day</td>
       </tr>
     
 </table>
 <button type="submit" class="btn btn-success"> Calculate</button>
+<td colspan="2"><input onclick="OnEnergyCalc()" type="button" value="Calculate" class="btn"> <input type="reset" value="Reset" class="btn"></td>
 </form>
 
 
