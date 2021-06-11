@@ -26,7 +26,7 @@ Emitters.authEmitter.subscribe(
 
 logout ():void{
 
-  this.http.post('https://flash-save.herokuapp.com/',{},{withCredentials:true}).subscribe(response =>{
+  this.http.post('https://flash-save.herokuapp.com/logout/',{},{withCredentials:true}).subscribe(response =>{
     console.log(response)
     confirm("Do you really want to Logout");
     this.authenticated = false;
