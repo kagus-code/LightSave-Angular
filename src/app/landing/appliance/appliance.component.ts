@@ -27,16 +27,23 @@ export class ApplianceComponent implements OnInit {
   ApplianceList:any=[];
   wattageVal:any = " ";
   applianceForm: FormGroup;
+  costForm:FormGroup;
   hoursDay:number;
   kwhDay:any="";
   kwhMonth:any="";
   kwhYear:any="";
+
+  kwhDayCost:any="";
+  kwhMonthCost:any="";
+  kwhYearCost:any="";
   ngOnInit(): void {
     this.refreshAppList();
     this.applianceForm = this.formbuilder.group({
       AppList: [null ],
 });	
-    
+this.costForm = this.formbuilder.group({
+  AppList: [null ],
+});	
   }
 
 refreshAppList(){
@@ -50,6 +57,15 @@ wattVal(): void{
   console.log(this.wattageVal)
 
 }
+
+costwattVal(): void{
+  this.wattageVal = this.costForm.value
+  console.log(this.wattageVal)
+
+}
+
+
+
 energyCalc(event:any){
 // this.hoursDay = event.target.dayHrs.value
 let power=parseInt(this.wattageVal.AppList);
@@ -76,6 +92,50 @@ this.kwhMonth = kwhMonth;
 this.kwhYear =kwhYear;
 console.log(kwhDay+"--"+kwhMonth+"--"+kwhYear);
 this.applianceForm.reset();
+event.target.dayHrs.value = " "
+event.target.powerWatt.value = " "
+
+}
+
+
+
+
+
+
+costCalc(event:any){
+
+  let power=parseInt(this.wattageVal.AppList);
+let hrs = parseInt(event.target.dayHrs.value);
+let cost = parseInt(event.target.costKw.value)
+if ( event.target.dayHrs.value <= 0 || event.target.powerWatt.value <= 0) {
+  alert("enter valid value")
+  
+  return;}
+
+  if ( event.target.dayHrs.value > 24) {
+    alert("woops!! A day only has 24hrs")
+    
+    return;}
+power/=1000;
+let kwhDay = power * hrs;
+let kwhMonth = kwhDay * 30;
+let kwhYear = kwhDay * 365;
+kwhDay   = parseFloat(kwhDay.toFixed(5));
+
+kwhMonth = parseFloat(kwhMonth.toFixed(5));
+kwhYear  = parseFloat(kwhYear.toFixed(5));
+
+let kwhDayCost = kwhDay * cost
+let kwhMonthCost = kwhMonth * cost
+let kwhYearCost = kwhYear * cost
+
+this.kwhDayCost = Math.round( kwhDayCost)
+this.kwhMonthCost =Math.round(kwhMonthCost)
+this.kwhYearCost = Math.round(kwhYearCost)
+
+
+console.log(this.kwhDayCost+"--"+this.kwhMonthCost+"--"+this.kwhYearCost);
+this.costForm.reset();
 event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
 

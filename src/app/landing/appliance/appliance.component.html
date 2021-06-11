@@ -49,12 +49,6 @@
 
 
 
-
-
-
-
-
-
 <div class="container text-center">
 
 
@@ -64,58 +58,52 @@
 
 <h5  id="result">Energy Consumed per Year&nbsp;&nbsp;  ---&nbsp;&nbsp;  {{kwhYear}}&nbsp; KWh/year</h5>
 
-
-
 </div>
 
 
+<div class="modal fade" id="calcModal" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 style="color: black" class="modal-title" id="calcModalLabel">Choose Appliance  enter Hours of use in a day and Cost per kwh in your region </h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      
+
+        <form [formGroup]="costForm" (submit)="costCalc($event)"  >
+          
+          <div class="form-group">
+            <label>Common Appliances</label>
+            <select class="form-control" (change)="costwattVal()" formControlName="AppList"  autofocus>
+              <option [ngValue]="null" disabled>Choose Appliance</option>
+              <option *ngFor="let data of ApplianceList" [ngValue]="data.wattage">{{data.name}}</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Power Consumed</label>
+            <input class="form-control" name="powerWatt" type="number" value="{{wattageVal.AppList}}"    placeholder="Power Consumed" >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Hours of use per day:</label>
+            <input  name="dayHrs"  type="number" step="any" min="0" max="24" class="intext form-control" placeholder="Hours of use per day" >
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Cost per unit(kw/h) in your region: <small>default Kenya 24 Ksh</small>  </label>
+            <input  name="costKw"  type="number" value="24" class="intext form-control" placeholder="24 Kenyan shillings" >
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success"> Calculate</button>
+          </div>
+        </form>
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!--   
-  <tr>
-  <td>Power consumption:</td>
-  <td class="math"><input name="Text1" type="number" step="any" min="0" class="intext"></td>
-  <td><select name="Select2">
-  <option selected="selected">watts (W)</option>
-  <option>kilowatts (kW)</option>
-  </select></td>
-  </tr>
-  <tr>
-  <td>Hours of use per day:</td>
-  <td class="math"><input name="Text2" type="number" step="any" min="0" max="24" class="intext"></td>
-  <td class="mathsymbol">h/day</td>
-  </tr>
-  <tr>
-  <td>&nbsp;</td>
-  <td colspan="2"><input onclick="OnEnergyCalc()" type="button" value="Calculate" class="btn"> <input type="reset" value="Reset" class="btn"></td>
-  </tr>
-  <tr>
-  <td>Energy consumed per day:</td>
-  <td class="math"><input name="Text8" type="text" class="outtext" readonly></td>
-  <td class="mathsymbol">kWh/day</td>
-  </tr>
-  <tr>
-  <td>Energy consumed per month:</td>
-  <td class="math"><input name="Text9" type="text" class="outtext" readonly></td>
-  <td class="mathsymbol">kWh/month</td>
-  </tr>
-  <tr>
-  <td>Energy consumed per year:</td>
-  <td class="math"><input name="Text10" type="text" class="outtext" readonly></td>
-  <td class="mathsymbol">kWh/year</td>
-  </tr>
-  </table>
-  </form>
-
-   -->
