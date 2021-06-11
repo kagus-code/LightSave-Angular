@@ -10,7 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {SharedService} from './shared.service';
 import { ApplianceComponent } from './landing/appliance/appliance.component';
-import { CostComponent } from './landing/cost/cost.component'
+import { CostComponent } from './landing/cost/cost.component';
+import { CustomAppComponent } from './custom-app/custom-app.component'
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CostComponent } from './landing/cost/cost.component'
     LoginComponent,
     NavigationComponent,
     ApplianceComponent,
-    CostComponent
+    CostComponent,
+    CustomAppComponent
   ],
   imports: [
     BrowserModule,

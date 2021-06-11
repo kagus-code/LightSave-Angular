@@ -25,6 +25,11 @@ export class ApplianceComponent implements OnInit {
   ) { }
 
   ApplianceList:any=[];
+  app:any;
+  applianceId :string
+  name:string
+  wattage:string
+
   wattageVal:any = " ";
   applianceForm: FormGroup;
   costForm:FormGroup;
@@ -151,7 +156,29 @@ event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
 
 
+}
 
+
+
+addCustomApp(){
+  this.app ={
+    applianceId :0,
+    name:"",
+    wattage:0
+  }
+var val = {
+  applianceId : this.applianceId,
+  name:this.name,
+  wattage:this.wattage
+};
+this.service.addAppliances(val).subscribe(res=>{
+alert(res.toString());
+});
+
+}
+
+closeClick(){
+this.refreshAppList()
 
 }
 
