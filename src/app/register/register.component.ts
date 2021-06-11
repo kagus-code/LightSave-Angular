@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 submit(): void{
-  this.http.post('http://127.0.0.1:8000/register/',this.form.getRawValue()).subscribe(response =>{
+  this.http.post('https://flash-save.herokuapp.com/register/',this.form.getRawValue()).subscribe(response =>{
     console.log(response)
     alert("Account created succesfully welcome to lightSave")
     this.router.navigateByUrl('/login');

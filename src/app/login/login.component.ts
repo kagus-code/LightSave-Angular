@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       });
     }
     submit(): void{
-      this.http.post('http://127.0.0.1:8000/login/',this.form.getRawValue(),
+      this.http.post('https://flash-save.herokuapp.com/login/',this.form.getRawValue(),
       {withCredentials:true})
       .subscribe(
         response => {

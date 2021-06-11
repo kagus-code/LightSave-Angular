@@ -6,7 +6,7 @@ import {Observable} from 'rxjs'
   providedIn: 'root'
 })
 export class SharedService {
-  readonly APIUrl = "http://127.0.0.1:8000"
+  readonly APIUrl = "https://flash-save.herokuapp.com"
   constructor(private http:HttpClient) { }
   getAppliances():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl + '/appliances/');

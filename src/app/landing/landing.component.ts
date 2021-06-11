@@ -23,7 +23,7 @@ message =" "
   ApplianceListWithoutFilter:any=[];
   ngOnInit(): void {
 
-    this.http.get('http://127.0.0.1:8000/user/',
+    this.http.get('https://flash-save.herokuapp.com/user/',
     {withCredentials:true})
     .subscribe(response =>{
       console.log(response);
