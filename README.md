@@ -1,27 +1,63 @@
-# Lightsave
+# Watch-Dog Web App
+
+#### This is a web app  WebApp that calculates the power consumption and cost , 09/06/2021
+
+#### By **Eston Kagwima**
+
+## Descriptiona
+This is web application that consumes an API end point generated using Django REST framework to calculate
+ power consumption of common house appliances and estimates the cost of running it for you.You can also 
+ add your own custom appliances
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### User stories Specification
+- Register for an acoount if you are new.
+- Sign in with the application to start using.
+- Select a common house hold appliance and get its power consumption.
+- The power consumption is displayed in dayly, monthly and yearly.
+- Add a custom appliance if it is not present on the list from the DB.
+- Get estimated cost for running that appliance for  dayly, monthly and yearly..
+## Setup/Installation Requirements
 
-## Code scaffolding
+- Clone the repository
+- Change directory to the project directory
+- Open project on VSCode
+- Run `npm install` before serving the application to install the packages and dependancies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+###### Development server
 
-## Build
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+###### Code scaffolding
 
-## Running unit tests
+- Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Build
 
-## Running end-to-end tests
+- Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Technologies Used
 
-## Further help
+- Angular
+- typescript
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## link to live site on GitHub Pages
+https://kagus-code.github.io/LightSave-Angular/
+## Support and contact details
+
+| Eston | ekagwima745@gmail.com |
+| ----- | --------------------- |
+
+### License
+
+License
+[MIT License](https://choosealicense.com/licenses/mit/)
+Copyright (c) 2021 Eston Kagwima
