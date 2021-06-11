@@ -65,6 +65,38 @@
     
   </div>
 </div>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button  (click)="tableData()" type="button"  class="btn btn-primary btn-lg btn-block">see our list of appliances and their power ratings </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>Appliance Id</th>
+        <th>
+          <!-- <div class="d-flex flex-row">
+            <input [(ngModel)]="nameFilter" class="form-control" (keyup)="filterfn()" placeholder="filter">
+          </div> -->
+          Name </th>
+        <th>Power rating(watts)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of ApplianceList">
+      <td>{{data.applianceId}}</td>
+      <td>{{data.name}}</td>
+      <td>{{data.wattage}}</td>
+    </tbody>
+  </table>
+
+</div>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path

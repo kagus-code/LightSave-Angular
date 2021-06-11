@@ -172,7 +172,7 @@ var val = {
   wattage:this.wattage
 };
 this.service.addAppliances(val).subscribe(res=>{
-alert(res.toString());
+alert("saved successfully");
 });
 
 }
@@ -181,5 +181,10 @@ closeClick(){
 this.refreshAppList()
 
 }
+
+
+
+
+
 
 }
