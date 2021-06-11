@@ -52,11 +52,11 @@
 <div class="container text-center">
 
 
-<h5 id="result">Energy Consumed per Day &nbsp;&nbsp;---&nbsp;&nbsp;  {{kwhDay}}&nbsp; KWh/day</h5>
+<h5 [innerHTML]="resDay" id="result"></h5>
 
-<h5 id="result">Energy Consumed per Month&nbsp;&nbsp; --- &nbsp;&nbsp; {{kwhMonth}} &nbsp;KWh/month</h5>
+<h5 [innerHTML]="resMonth" id="result"></h5>
 
-<h5  id="result">Energy Consumed per Year&nbsp;&nbsp;  ---&nbsp;&nbsp;  {{kwhYear}}&nbsp; KWh/year</h5>
+<h5 [innerHTML]="resYear"  id="result"></h5>
 
 </div>
 
@@ -105,5 +105,4 @@
 </div>
 
   
-
 

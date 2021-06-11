@@ -36,6 +36,10 @@ export class ApplianceComponent implements OnInit {
   kwhDayCost:any="";
   kwhMonthCost:any="";
   kwhYearCost:any="";
+
+  resDay: string = "";
+  resMonth: string = "";
+  resYear: string = "";
   ngOnInit(): void {
     this.refreshAppList();
     this.applianceForm = this.formbuilder.group({
@@ -91,6 +95,10 @@ this.kwhDay=kwhDay;
 this.kwhMonth = kwhMonth;
 this.kwhYear =kwhYear;
 console.log(kwhDay+"--"+kwhMonth+"--"+kwhYear);
+
+this.resDay ="Energy Consumed per Day &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhDay + "&nbsp; (units kw/h)  "
+this.resMonth= "Energy Consumed Mohth &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhMonth + "&nbsp; (units kw/h) " 
+this.resYear ="Energy Consumed Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYear + "&nbsp; (units kw/h)"
 this.applianceForm.reset();
 event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
@@ -135,6 +143,9 @@ this.kwhYearCost = Math.round(kwhYearCost)
 
 
 console.log(this.kwhDayCost+"--"+this.kwhMonthCost+"--"+this.kwhYearCost);
+this.resDay ="Cost per Day &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhDayCost + "&nbsp; shillings "
+this.resMonth= "Cost per Mohth &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhMonthCost + "&nbsp; shillings " 
+this.resYear ="Cost per Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYearCost + "&nbsp; shillings "
 this.costForm.reset();
 event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
