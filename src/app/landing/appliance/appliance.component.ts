@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { AppList } from 'src/app/app-list';
 
+declare var $: any;
 
 @Component({
   selector: 'app-appliance',
@@ -53,6 +54,8 @@ export class ApplianceComponent implements OnInit {
 this.costForm = this.formbuilder.group({
   AppList: [null ],
 });	
+
+
   }
 
 refreshAppList(){
@@ -107,7 +110,7 @@ this.resYear ="Energy Consumed Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYear +
 this.applianceForm.reset();
 event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
-
+$('#exampleModal').modal('hide');
 }
 
 
@@ -154,7 +157,7 @@ this.resYear ="Cost per Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYearCost + "&
 this.costForm.reset();
 event.target.dayHrs.value = " "
 event.target.powerWatt.value = " "
-
+$('#calcModal').modal('hide');
 
 }
 
