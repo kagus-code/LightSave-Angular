@@ -9,6 +9,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
   form : FormGroup;
+  jwt:any;
   constructor(
     private formbuilder: FormBuilder,
     private http: HttpClient,
@@ -27,6 +28,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response)
+          this.jwt = response
+         localStorage.setItem("token",`${this.jwt.jwt}`)
           this.router.navigateByUrl('');
         },
         error => console.log('error', error)
