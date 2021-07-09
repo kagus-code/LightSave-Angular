@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
     if (this.auth.isLoggedin()){
     return true;
     }
-    Swal.fire('You are not logged in'); 
+    Swal.fire('Please log in to proceed'); 
     this.router.navigate(['login']);
     return false;
   }

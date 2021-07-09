@@ -11,7 +11,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import {SharedService} from './shared.service';
 import { ApplianceComponent } from './landing/appliance/appliance.component';
 import { CostComponent } from './landing/cost/cost.component';
-import { CustomAppComponent } from './custom-app/custom-app.component'
+import { CustomAppComponent } from './custom-app/custom-app.component';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule,NgxUiLoaderHttpModule  } from "ngx-ui-loader";
+
 
 
 @NgModule({
@@ -30,7 +32,11 @@ import { CustomAppComponent } from './custom-app/custom-app.component'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule, // import NgxUiLoaderModule
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }), // import NgxUiLoaderHttpModule. By default, it will show background loader.
+    // If you need to show foreground spinner, do as follow:
+    // NgxUiLoaderHttpModule.forRoot({ showForeground: true })
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

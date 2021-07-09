@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,7 +33,10 @@ export class LoginComponent implements OnInit {
          localStorage.setItem("token",`${this.jwt.jwt}`)
           this.router.navigateByUrl('');
         },
-        error => console.log('error', error)
+        error =>Swal.fire(error.error.detail,'Login Unsuccessful!')
+      
+        
+        
       );
         
     }
