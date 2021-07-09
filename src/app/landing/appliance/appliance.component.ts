@@ -3,6 +3,7 @@ import {SharedService} from 'src/app/shared.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { AppList } from 'src/app/app-list';
+import Swal from 'sweetalert2'
 
 declare var $: any;
 
@@ -88,7 +89,12 @@ if ( event.target.dayHrs.value <= 0 || event.target.powerWatt.value <= 0) {
   return;}
 
   if ( event.target.dayHrs.value > 24) {
-    alert("whoops!! A day only has 24hrs")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'A day only has 24hrs',
+
+    })
     
     return;}
 power/=1000;
@@ -124,12 +130,21 @@ costCalc(event:any){
 let hrs = parseInt(event.target.dayHrs.value);
 let cost = parseInt(event.target.costKw.value)
 if ( event.target.dayHrs.value <= 0 || event.target.powerWatt.value <= 0) {
-  alert("enter valid value")
+  Swal.fire({
+      icon: 'error',
+      text: 'Enter a valid value',
+
+    })
   
   return;}
 
   if ( event.target.dayHrs.value > 24) {
-    alert("woops!! A day only has 24hrs")
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'A day only has 24hrs',
+
+    })
     
     return;}
 power/=1000;
@@ -175,7 +190,15 @@ var val = {
   wattage:this.wattage
 };
 this.service.addAppliances(val).subscribe(res=>{
-alert("saved successfully");
+  $('#customAppModal').modal('hide');
+  Swal.fire('',
+  'Saved Successfully',
+  'success').then((result) => {
+    if (result.isConfirmed) {
+      window.location.reload();
+    } 
+  })
+
 });
 
 }
