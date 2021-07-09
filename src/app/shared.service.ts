@@ -18,7 +18,7 @@ export class SharedService {
     return this.http.put(this.APIUrl + '/appliances/',val);
   }
   deleteAppliances(val:any){
-    return this.http.delete(this.APIUrl + '/appliances/'+val);
+    return this.http.delete(this.APIUrl + '/single-app/'+val);
   }
 
 

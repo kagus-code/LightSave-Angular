@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Emitters} from '../emitters/emitters';
 import {SharedService} from 'src/app/shared.service';
+import Swal from 'sweetalert2'
+import { data } from 'jquery';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -55,6 +57,34 @@ message =" "
     
   }
 
+  deleteClick(item:any){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.deleteAppliances(item.applianceId).subscribe(data=>{
+          Swal.fire(
+            'Deleted!',
+            'Appliance has been deleted.',
+            'success'
+          ).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            } 
+          })
+        })
+        
+
+      }
+    })
+
+  }
 
   filterfn(){
     var nameFilter =this.nameFilter;
