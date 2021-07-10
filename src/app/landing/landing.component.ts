@@ -28,7 +28,6 @@ message =" "
     this.http.get('https://flash-save.herokuapp.com/user/',
     {withCredentials:true})
     .subscribe(response =>{
-      console.log(response);
       this.user = response;
       Emitters.authEmitter.emit(true);
       

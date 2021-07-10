@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
       {withCredentials:true})
       .subscribe(
         response => {
-          console.log(response)
           this.jwt = response
          localStorage.setItem("token",`${this.jwt.jwt}`)
           this.router.navigateByUrl('');

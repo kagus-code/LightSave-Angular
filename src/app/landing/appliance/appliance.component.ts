@@ -67,13 +67,13 @@ refreshAppList(){
 
 wattVal(): void{
   this.wattageVal = this.applianceForm.value
-  console.log(this.wattageVal)
+
 
 }
 
 costwattVal(): void{
   this.wattageVal = this.costForm.value
-  console.log(this.wattageVal)
+
 
 }
 
@@ -108,14 +108,14 @@ kwhYear  = parseFloat(kwhYear.toFixed(5));
 this.kwhDay=kwhDay;
 this.kwhMonth = kwhMonth;
 this.kwhYear =kwhYear;
-console.log(kwhDay+"--"+kwhMonth+"--"+kwhYear);
+
 
 this.resDay ="Energy Consumed per Day &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhDay + "&nbsp; (units kw/h)  "
 this.resMonth= "Energy Consumed Month &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhMonth + "&nbsp; (units kw/h) " 
 this.resYear ="Energy Consumed Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYear + "&nbsp; (units kw/h)"
 this.applianceForm.reset();
-event.target.dayHrs.value = " "
-event.target.powerWatt.value = " "
+event.target.dayHrs.value =""
+event.target.powerWatt.value=""
 $('#exampleModal').modal('hide');
 }
 
@@ -165,13 +165,13 @@ this.kwhMonthCost =Math.round(kwhMonthCost)
 this.kwhYearCost = Math.round(kwhYearCost)
 
 
-console.log(this.kwhDayCost+"--"+this.kwhMonthCost+"--"+this.kwhYearCost);
+
 this.resDay ="Cost per Day &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhDayCost + "&nbsp; shillings "
 this.resMonth= "Cost per Month &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhMonthCost + "&nbsp; shillings " 
 this.resYear ="Cost per Year &nbsp;&nbsp;---&nbsp;&nbsp;" +this.kwhYearCost + "&nbsp; shillings "
 this.costForm.reset();
-event.target.dayHrs.value = " "
-event.target.powerWatt.value = " "
+event.target.dayHrs.value =""
+event.target.powerWatt.value =""
 $('#calcModal').modal('hide');
 
 }
