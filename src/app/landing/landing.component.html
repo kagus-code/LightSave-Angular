@@ -89,8 +89,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of ApplianceList">
-      <td>{{data.applianceId}}</td>
+      <tr *ngFor="let data of ApplianceList; index as i">
+      <td>{{i+1}}</td>
       <td>{{data.name}}</td>
       <td>{{data.wattage}}</td>
       <td><button class="btn btn-light" (click)="deleteClick(data)"><i class="fas fa-trash-alt"></i></button></td>
